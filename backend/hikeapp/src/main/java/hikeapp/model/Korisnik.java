@@ -27,12 +27,17 @@ public class Korisnik {
     private String ime;
     private String prezime;
     private String brojTelefona;
+    
     private String adresa;       
     private String grad;
     private String postanskiBroj;
+    private String drzava;
+    
     private String email;
     private String password;
+    
     private String role;
+    
     private LocalDateTime kreiran;
 
     @OneToMany(mappedBy = "korisnik", cascade = CascadeType.ALL)

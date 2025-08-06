@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Velicina {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String velicina;

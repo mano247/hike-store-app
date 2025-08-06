@@ -31,4 +31,6 @@ public class Recenzija {
     private Integer ocena;
     private String komentar;
     private LocalDateTime vreme;
+    
+    private boolean vidljiv = true;
 }

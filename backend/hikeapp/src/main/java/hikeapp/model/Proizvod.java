@@ -22,32 +22,35 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Proizvod {
-	 	@Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	    private String ime;
-	    private String opis;
-	    private Double cena;
-	    private Boolean dostupno;
-	    private String slikaURL;
-	    private LocalDateTime vreme;
+    private String ime;
+    private String opis;
+    private String pol;
+    private String sifra;
+    private Double cena;
+    private Boolean dostupno;
+    private String slikaURL;
+    private LocalDateTime vreme;
+    private boolean vidljiv = true;
 
-	    @ManyToOne
-	    private Korisnik kreirao;
+    @ManyToOne
+    private Korisnik kreirao;
 
-	    @ManyToOne
-	    private Brend brend;
+    @ManyToOne
+    private Brend brend;
 
-	    @ManyToOne
-	    private Kategorija kategorija;
+    @ManyToOne
+    private Kategorija kategorija;
 
-	    @OneToMany(mappedBy = "proizvod", cascade = CascadeType.ALL)
-	    private List<Velicina> velicine;
+    @OneToMany(mappedBy = "proizvod", cascade = CascadeType.ALL)
+    private List<Velicina> velicine;
 
-	    @OneToOne(mappedBy = "proizvod", cascade = CascadeType.ALL)
-	    private Popust popust;
+    @OneToOne(mappedBy = "proizvod", cascade = CascadeType.ALL)
+    private Popust popust;
 
-	    @OneToMany(mappedBy = "proizvod", cascade = CascadeType.ALL)
-	    private List<Recenzija> recenzije;
+    @OneToMany(mappedBy = "proizvod", cascade = CascadeType.ALL)
+    private List<Recenzija> recenzije;
 }

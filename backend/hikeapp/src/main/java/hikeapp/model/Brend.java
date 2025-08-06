@@ -22,4 +22,6 @@ public class Brend {
     private String naziv;
     private String opis;
     private String slikaURL;
+    
+    private boolean vidljiv = true;
 }

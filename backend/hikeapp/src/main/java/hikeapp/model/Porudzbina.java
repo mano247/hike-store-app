@@ -33,10 +33,10 @@ public class Porudzbina {
     private Double ukupnaCena;
 
     // adresa za dostavu
-    private String ulica;
-    private String broj;
+    private String adresa;
     private String grad;
     private String postanskiBroj;
+    private String drzava;
 
     @OneToMany(mappedBy = "porudzbina", cascade = CascadeType.ALL)
     private List<PorudzbinaItem> proizvodi;

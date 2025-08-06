@@ -29,4 +29,6 @@ public class Poruka {
     private Boolean fromBot;
     private String sazetak;
     private LocalDateTime vreme;
+    
+    private boolean vidljiv = true;
 }

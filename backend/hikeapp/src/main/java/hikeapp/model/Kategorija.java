@@ -21,4 +21,6 @@ public class Kategorija {
 
     private String naziv;
     private String opis;
+    
+    private boolean vidljiv = true;
 }	
