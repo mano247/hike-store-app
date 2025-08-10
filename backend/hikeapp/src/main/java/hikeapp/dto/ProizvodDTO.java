@@ -32,14 +32,16 @@ public class ProizvodDTO {
 	@Positive(message = "Cena mora biti pozitivna")
 	private Double cena;
 	
+	@Builder.Default
 	private Boolean dostupno = true;
 	
 	private String slikaURL;
 	
+	@Builder.Default
 	private Boolean vidljiv = true;
 	
 	@NotNull(message = "Kategorija je obavezna")
-	private Long kategorijaID;
+	private Long kategorijaId;
 	
 	@NotNull(message = "Brend je obavezan")
 	private Long brendId;

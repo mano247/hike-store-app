@@ -9,5 +9,5 @@ import hikeapp.model.Notifikacija;
 
 @Repository
 public interface NotifikacijaRepository extends JpaRepository<Notifikacija, Long>{
-	List<Notifikacija> findbyKorisnikIdOrderByVremeSlanjaDesc(Long korisnikId);
+//	List<Notifikacija> findByKorisnikIdOrderByVremeSlanjaDesc(Long korisnikId);
 }

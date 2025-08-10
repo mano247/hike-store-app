@@ -34,7 +34,8 @@ public class Proizvod {
     private Boolean dostupno;
     private String slikaURL;
     private LocalDateTime vreme;
-    private boolean vidljiv = true;
+    @Builder.Default
+    private Boolean vidljiv=true;
 
     @ManyToOne
     private Korisnik kreirao;

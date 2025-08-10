@@ -11,5 +11,5 @@ import hikeapp.model.Brend;
 @Repository
 public interface BrendRepository extends JpaRepository<Brend, Long>{
 	Optional<Brend> findByNazivIgnoreCase(String naziv);
-	List<Brend> findbyVidljivTrue();
+	List<Brend> findByVidljivTrue();
 }
