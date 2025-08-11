@@ -17,5 +17,6 @@ public class BrendDTO {
 	private String opis;
 	private String slikaURL;
 	
+	@Builder.Default
 	private Boolean vidljiv = true;
 }

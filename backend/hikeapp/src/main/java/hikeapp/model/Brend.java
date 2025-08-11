@@ -23,5 +23,6 @@ public class Brend {
     private String opis;
     private String slikaURL;
     
-    private boolean vidljiv = true;
+    @Builder.Default
+    private Boolean vidljiv = true;
 }

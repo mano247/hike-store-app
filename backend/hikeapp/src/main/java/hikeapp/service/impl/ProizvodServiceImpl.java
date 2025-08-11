@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import hikeapp.dto.ProizvodDTO;
 import hikeapp.model.Brend;
@@ -17,6 +18,7 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class ProizvodServiceImpl implements ProizvodService{
 	@Autowired
@@ -90,6 +92,7 @@ public class ProizvodServiceImpl implements ProizvodService{
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public ProizvodDTO getById(Long id) {
 		Proizvod entity = proizvodRepository.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("Proizvod nije pronadjen"));
@@ -97,14 +100,16 @@ public class ProizvodServiceImpl implements ProizvodService{
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public Page<ProizvodDTO> getAll(Pageable pageable) {
 		return proizvodRepository.findAll(pageable)
 				.map(this::mapToDTO);
 	}
 	
 	@Override
+	@Transactional(readOnly = true)
 	public Page<ProizvodDTO> search(String ime, String pol, Long kategorijaId, Long brendId, Pageable pageable) {
-		String qIme = (ime != null && !ime.isBlank()) ? ime : null;
+		String qIme = (ime != null && !ime.isBlank()) ? ime.toLowerCase() : null;
 		String qPol = (pol != null && !pol.isBlank() ? pol : null);
 		
 		Page<Proizvod> page = proizvodRepository.search(qIme, qPol, kategorijaId, brendId, pageable);

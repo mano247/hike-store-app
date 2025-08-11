@@ -16,6 +16,7 @@ public class KategorijaDTO {
 	
 	private String opis;
 	
+	@Builder.Default
 	private Boolean vidljiv = true;
 
 }
