@@ -1,5 +1,6 @@
 package hikeapp.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class Proizvod {
     private String opis;
     private String pol;
     private String sifra;
-    private Double cena;
+    private BigDecimal cena;
     private Boolean dostupno;
     private String slikaURL;
     private LocalDateTime vreme;

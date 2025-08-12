@@ -1,9 +1,11 @@
 package hikeapp.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,13 +23,21 @@ public class KorpaItem {
     private Long id;
 
     @ManyToOne
-    private Korisnik korisnik;
+    @JoinColumn(nullable = false)
+    private Korpa korpa;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Proizvod proizvod;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Velicina velicina;
-
+    
+    @Column(nullable = false)
     private Double kolicina;
+    
+    @Builder.Default
+    @Column(nullable = false)
+    private Boolean vidljiv = true;
 }

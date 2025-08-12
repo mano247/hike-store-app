@@ -11,9 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class KorpaItemDto {
-	@NotNull(message = "Korisnik je obavezan")
-	private Long korisnikId;
+public class KorpaItemDTO {
 	
 	@NotNull(message = "Proizvod je obavezan")
 	private Long proizvodId;

@@ -44,7 +44,7 @@ public class Korisnik {
     private List<Porudzbina> porudzbine;
 
     @OneToMany(mappedBy = "korisnik", cascade = CascadeType.ALL)
-    private List<KorpaItem> korpa;
+    private List<Korpa> korpe;
 
     @OneToMany(mappedBy = "korisnik", cascade = CascadeType.ALL)
     private List<Poruka> poruke;
